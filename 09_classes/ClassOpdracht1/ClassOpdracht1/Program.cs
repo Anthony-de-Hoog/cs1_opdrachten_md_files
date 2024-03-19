@@ -4,11 +4,11 @@ namespace ClassOpdracht1
 {
      ???
     //Schrijf met commentaar(//dit is commentaar) in deze file de naam bij elk onderdeel 
-    internal class ClassStructureExercise
+    internal class ClassStructureExercise //class
     {
-        private readonly string accountName;
+        private readonly string accountName; 
 
-        internal ClassStructureExercise(string accountName)
+        internal ClassStructureExercise(string accountName) //access
         {
             this.accountName = accountName;
         }
