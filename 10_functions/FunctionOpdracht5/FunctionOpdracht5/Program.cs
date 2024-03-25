@@ -19,13 +19,14 @@ namespace FunctionOpdracht5
         {
 
 			Console.WriteLine("choose your hero's name");
-            heroName = GetHeroName(); //heroName zit op Program (this)
+            this.heroName = GetHeroName(); //heroName zit op Program (this)
 
             Console.WriteLine($"your hero is called {heroName}");
 
             SetHeroStrength(9999);//super sterk natuurlijk
 
             //1) roep hier de SetHealth aan met een 1000;
+            SetHealth(1000);
 
             while(IsHeroDead())//4) maak deze function, deze geeft een true  terug als health <= 0, anders geeft deze false terug
             {
@@ -43,14 +44,46 @@ namespace FunctionOpdracht5
         }
 
         //2) maak hier een function GetHeroName die met Console.ReadLine() een helden naam vraagt
+        private string GetHeroName()
+        {
+            heroName = Console.ReadLine();
+            return heroName;
+        }
 
         //3) maak hier een function SetHeroStrength met 1 argument  van type 'int'
         //in de body van de function zet de waarde van heroStrength (van program) het 
+        private int SetHeroStrength(int heroStrength) 
+        {
+            return 9999;
+
+        }
+
+        private int RollDamage()
+        {
+            return 96;
+        }
 
         //
         private void SetHealth(int health)
         {
             this.health = health;
+        }
+
+        private int DoDamageToHero(int dam)
+        {
+            health -= dam;
+            return dam;
+        }
+
+        private bool IsHeroDead()
+        {
+            if (this.health <= 0) 
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
         }
     }
 }
